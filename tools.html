@@ -41,3 +41,21 @@ document.getElementById('predictRiskBtn').addEventListener('click', function() {
 </script>
 </body>
 </html>
+import { calculateFlareRisk } from './flareRisk.js';
+
+document.getElementById('predictRiskBtn').addEventListener('click', function(){
+  const logs = JSON.parse(localStorage.getItem('dailyLogs')) || [];
+  if(logs.length === 0){
+    alert("Add a daily log first.");
+    return;
+  }
+
+  const lastLog = logs[logs.length-1];
+
+  // Check if recent trigger (simplified: user can mark trigger manually)
+  const recentTrigger = localStorage.getItem('recentTrigger') === '1' ? 1 : 0;
+
+  const risk = calculateFlareRisk(lastLog, recentTrigger);
+
+  document.getElementById('riskOutput').innerText = `Today's flare risk: ${risk}/10 (scientific formula)`;
+});
