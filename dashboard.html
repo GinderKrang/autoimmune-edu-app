@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Autoimmune Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="dashboard.html">Dashboard</a> |
+      <a href="tools.html">Tools</a> |
+      <a href="library.html">Diseases</a> |
+      <a href="about.html">About Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Daily Symptom Log</h2>
+
+    <label>Pain (1-10): <input type="number" id="pain" min="1" max="10"></label><br>
+    <label>Sleep (hours): <input type="number" id="sleep" min="0" max="24"></label><br>
+    <label>Stress (1-10): <input type="number" id="stress" min="1" max="10"></label><br><br>
+
+    <button id="saveLogBtn">Save Log</button>
+
+    <h3>Previous Logs</h3>
+    <div id="logsContainer"></div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
