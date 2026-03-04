@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diseases - Autoimmune Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+<h1>Autoimmune Diseases Library</h1>
+<nav>
+  <a href="index.html">Home</a> |
+  <a href="dashboard.html">Dashboard</a> |
+  <a href="tools.html">Tools</a> |
+  <a href="library.html">Diseases</a> |
+  <a href="about.html">About Us</a>
+</nav>
+</header>
+
+<main id="libraryContainer"></main>
+
+<script src="diseases.js"></script>
+<script>
+const container = document.getElementById('libraryContainer');
+diseases.forEach(disease => {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `<h2>${disease.name}</h2>
+  <p>${disease.simpleExplanation}</p>
+  <p><strong>Symptoms:</strong> ${disease.commonSymptoms.join(', ')}</p>
+  <p><strong>Lifestyle Support:</strong> ${disease.lifestyleSupport.join(', ')}</p>`;
+  container.appendChild(card);
+});
+</script>
+</body>
+</html>
