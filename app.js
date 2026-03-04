@@ -24,3 +24,6 @@ diseases.forEach(disease => {
   card.appendChild(btn);
   container.appendChild(card);
 });
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js");
+}
