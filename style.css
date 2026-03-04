@@ -1,32 +1,139 @@
 body {
   font-family: Arial, sans-serif;
+  background-color: #F7F9FB;
   margin: 0;
-  background: #f4f6f8;
+  padding: 0;
 }
 
 header {
-  background: #1e3a8a;
+  background-color: #3A7BD5;
   color: white;
-  padding: 1.5rem;
+  padding: 20px;
   text-align: center;
 }
 
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 main {
-  padding: 1rem;
+  padding: 20px;
 }
 
 .card {
   background: white;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
 }
 
 button {
-  padding: 0.5rem 1rem;
-  background: #1e3a8a;
+  background-color: #2AAE8A;
   color: white;
   border: none;
-  border-radius: 6px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}body {
+  font-family: Arial, sans-serif;
+  background-color: #F7F9FB;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #3A7BD5;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+button {
+  background-color: #2AAE8A;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
+}body {
+  font-family: Arial, sans-serif;
+  background-color: #F7F9FB;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #3A7BD5;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+button {
+  background-color: #2AAE8A;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: 0.8;
 }
