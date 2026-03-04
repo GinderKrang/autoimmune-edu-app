@@ -1,29 +1,42 @@
-const container = document.getElementById("content");
+// Save log to localStorage
+document.getElementById('saveLogBtn').addEventListener('click', function() {
+  const pain = document.getElementById('pain').value;
+  const sleep = document.getElementById('sleep').value;
+  const stress = document.getElementById('stress').value;
 
-diseases.forEach(disease => {
-  const card = document.createElement("div");
-  card.className = "card";
+  if(!pain || !sleep || !stress){
+    alert("Please fill all fields");
+    return;
+  }
 
-  card.innerHTML = `
-    <h2>${disease.name}</h2>
-    <p><strong>Overview:</strong> ${disease.overview}</p>
-    <p><strong>Symptoms:</strong> ${disease.symptoms.join(", ")}</p>
-    <p><strong>Prognosis:</strong> ${disease.prognosis}</p>
-  `;
-
-  const btn = document.createElement("button");
-  btn.textContent = "View Treatments";
-  btn.onclick = () => {
-    alert(
-      disease.treatments.map(t => 
-        `${t.name} - ${t.purpose}\nSide Effects: ${t.sideEffects.join(", ")}`
-      ).join("\n\n")
-    );
+  const log = {
+    date: new Date().toLocaleDateString(),
+    pain: +pain,
+    sleep: +sleep,
+    stress: +stress
   };
 
-  card.appendChild(btn);
-  container.appendChild(card);
+  let logs = JSON.parse(localStorage.getItem('dailyLogs')) || [];
+  logs.push(log);
+  localStorage.setItem('dailyLogs', JSON.stringify(logs));
+
+  alert("Log saved!");
+
+  displayLogs();
 });
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
+
+// Display previous logs
+function displayLogs(){
+  const container = document.getElementById('logsContainer');
+  container.innerHTML = '';
+  const logs = JSON.parse(localStorage.getItem('dailyLogs')) || [];
+  logs.forEach(l => {
+    const div = document.createElement('div');
+    div.className = 'card';
+    div.innerHTML = `<strong>${l.date}</strong> - Pain: ${l.pain}, Sleep: ${l.sleep}, Stress: ${l.stress}`;
+    container.appendChild(div);
+  });
 }
+
+// Initial display
+displayLogs();
